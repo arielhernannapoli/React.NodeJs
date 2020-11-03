@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { RouteComponentProps } from 'react-router';
 import './SignIn.css';
 import { signIn } from '../services/authenticationService';
 import { AuthenticationModel } from '../models/authenticationModel';
 
-class SignIn extends Component<{}, { email: string, password: string, error: boolean, msgError: string }> {
+export class SignIn extends React.Component<RouteComponentProps<{}>, { email: string, password: string, error: boolean, msgError: string }> {
 
     constructor(props) {
         super(props);
@@ -43,12 +44,9 @@ class SignIn extends Component<{}, { email: string, password: string, error: boo
     return (
         <div className="SignIn">
             <div className="divMain">
-                <div className="divLogo">
-                    <img src="./logo512.png" width="500px;" height="300px;" alt="" />
-                </div>
-                <div className="container divContainer">
-                    <h2>&nbsp;</h2>
-                    <hr />
+                <div className="container">
+                    <h2>Ingresar</h2>
+                    <hr/>
                     <div className="formLogin">         
                         <form>
                             <div className="form-group">
@@ -68,5 +66,3 @@ class SignIn extends Component<{}, { email: string, password: string, error: boo
     );
   }
 }
-
-export default SignIn;

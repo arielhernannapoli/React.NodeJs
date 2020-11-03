@@ -1,11 +1,12 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router';
 
-function User() {
-  return (
-    <div className="User">
-      User
-    </div>
-  );
+export class User extends React.Component<RouteComponentProps<{}>, { email: string, password: string, error: boolean, msgError: string }> {
+  render() {
+    return (
+      <div className="User">
+        User
+      </div>
+    );
+  }
 }
-
-export default User;

@@ -1,11 +1,13 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import SignIn from'./components/signIn';
+import * as RoutesModule from './routes/routes';
+let routes = RoutesModule.routes;
 
 function App() {
   return (
     <div className="App">
-      <SignIn />
+      <BrowserRouter children={ routes } />
     </div>
   );
 }
